@@ -10,14 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/students")
+
 public class StudentController {
 
     private final StudentService service;
 
-    public StudentController(StudentService service){
+    public StudentController(StudentService service)
+    {
         this.service = service;
     }
     @PostMapping()
+
     public Student addStudents(@RequestBody Student student){
         return service.save(student);
 
